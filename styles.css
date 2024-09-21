@@ -24,12 +24,23 @@ body.dark-mode nav ul li a {
     color: #ddd !important;  /* Make sure dark mode has white/light text */
 }
 
+
 /* Nav styles */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #7c694eb2; /* Background color for nav */
+    z-index: 1000; /* Ensure it stays on top of other elements */
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
 nav ul {
     list-style: none;
     padding: 0;
-    margin: 10px 0;
-    text-align: center;  /* Centered the nav items */
+    margin: 0;
+    text-align: center;
 }
 
 nav ul li {
@@ -38,7 +49,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #232323;  /* Default text color for light mode */
+    color: #000000;  /* Default text color for light mode */
     text-decoration: none;
     font-weight: bold;
     padding: 10px;
@@ -58,29 +69,54 @@ body.dark-mode nav ul li a:hover {
     border-radius: 5px;
 }
 
+body.dark-mode nav {
+    background-color: #2d2c2cae;
+}
+
 /* Header Styles */
 header {
     background: #7c694eb2;
     color: #232323;
-    padding: 20px;
+    padding: 5px;
     text-align: center;
+    margin-top: 60px; /* Adjust this value based on the height of your nav */
 }
 
 .header-content {
     display: flex;
     align-items: center; /* Vertically align items */
     justify-content: center; /* Center the content */
-    gap: 20px; /* Space between the image and text */
-    padding: 20px 0; /* Optional: Add some vertical padding */
+    padding: 2px 0; /* Optional: Add some vertical padding */
     flex-direction: column; /* Stack image and text vertically */
 }
 
+header h1 {
+    font-family: 'Nanum Gothic Coding', monospace;
+    color: #000000;
+    text-align: center;
+}
+
+header p {
+    font-family: 'Nanum Gothic Coding', monospace;
+    font-weight: 400;  /* Regular weight */
+    font-size: 1.2rem;
+    color: #000000
+}
+
+body.dark-mode header h1 {
+    color: #ffffff
+}
+
+body.dark-mode header p {
+    color: #ffffff
+}
+
 .profile-image {
-    width: 150px; /* Set a width for the image */
+    width: 100px; /* Set a width for the image */
     height: auto; /* Maintain aspect ratio */
-    border-radius: 50%; /* Optional: make it circular */
+    border-radius: 40%; /* Optional: make it circular */
     margin-right: 15px; /* Space between image and text */
-    margin-bottom: 10px; /* Add some space below the image */
+    margin-bottom: 1px; /* Add some space below the image */
 }
 
 .text-content {
@@ -232,7 +268,7 @@ footer {
     text-align: center;
     padding: 10px;
     background: #7c694eb2;
-    color: #fff;
+    color: #000000;
     transition: background-color 0.3s, color 0.3s;
 }
 
