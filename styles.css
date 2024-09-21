@@ -5,7 +5,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     line-height: 1.6;
-    background-color: #f4f4f4;
+    background-color: #e0d0bb66;
     color: #333;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -38,7 +38,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #ffffff;  /* Default text color for light mode */
+    color: #232323;  /* Default text color for light mode */
     text-decoration: none;
     font-weight: bold;
     padding: 10px;
@@ -60,10 +60,47 @@ body.dark-mode nav ul li a:hover {
 
 /* Header Styles */
 header {
-    background: #5b5b5b;
-    color: #fff;
+    background: #7c694eb2;
+    color: #232323;
     padding: 20px;
     text-align: center;
+}
+
+.header-content {
+    display: flex;
+    align-items: center; /* Vertically align items */
+    justify-content: center; /* Center the content */
+    gap: 20px; /* Space between the image and text */
+    padding: 20px 0; /* Optional: Add some vertical padding */
+    flex-direction: column; /* Stack image and text vertically */
+}
+
+.profile-image {
+    width: 150px; /* Set a width for the image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Optional: make it circular */
+    margin-right: 15px; /* Space between image and text */
+    margin-bottom: 10px; /* Add some space below the image */
+}
+
+.text-content {
+    text-align: center; /* Center the text within this container */
+}
+
+.typewriter-text {
+    display: inline-block; /* Keep it on one line */
+    margin-top: 5px; /* Adjust spacing between the name and typewriter text */
+}
+
+@media (max-width: 600px) {
+    .header-content {
+        flex-direction: column; /* Stack items vertically on mobile */
+        align-items: center; /* Center items */
+    }
+
+    .profile-image {
+        margin-bottom: 10px; /* Space below the image */
+    }
 }
 
 /* Dark Mode Header Styles */
@@ -113,6 +150,12 @@ body.dark-mode h2 {
     border-radius: 5px;
     background: #f9f9f9;
     transition: transform 0.3s, background-color 0.3s, border-color 0.3s;
+    color: black; /* Default text color for light mode */
+}
+
+.project-card h3,
+.project-card p {
+    color: inherit; /* Inherit color from .project-card */
 }
 
 .project-card:hover {
@@ -124,16 +167,19 @@ body.dark-mode h2 {
 body.dark-mode .project-card {
     background-color: #555;
     border-color: #666;
+    color: white; /* Text color for dark mode */
 }
 
-body.dark-mode .project-card:hover {
-    background-color: #666;
+body.dark-mode .project-card h3,
+body.dark-mode .project-card p {
+    color: white; /* Ensure text is white in dark mode */
 }
+
 
 /* Contact Form */
 #contact-form {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     max-width: 600px;
     margin: 0 auto;
 }
@@ -162,34 +208,30 @@ body.dark-mode #contact-form input:focus, body.dark-mode #contact-form textarea:
     border-color: #ddd;
 }
 
-#contact-form button {
-    background: #333;
-    color: #fff;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    width: 100px;
-    align-self: flex-start;
+.contact-info {
+    display: flex;          /* Make the container a flexbox */
+    justify-content: space-between;  /* Add space between the email and phone */
+    gap: 10px;              /* Adjust the gap between the elements */
+    flex-wrap: wrap;        /* Allow wrapping on smaller screens */
 }
 
-#contact-form button:hover {
-    background: #555;
+.contact-info p {
+    margin: 0;
+    font-size: 1rem;
 }
 
-body.dark-mode #contact-form button {
-    background-color: #555;
-}
-
-body.dark-mode #contact-form button:hover {
-    background-color: #666;
+@media (max-width: 600px) {
+    .contact-info {
+        flex-direction: column;  /* Stack the info vertically on smaller screens */
+        gap: 10px;
+    }
 }
 
 /* Footer */
 footer {
     text-align: center;
     padding: 10px;
-    background: #333;
+    background: #7c694eb2;
     color: #fff;
     transition: background-color 0.3s, color 0.3s;
 }

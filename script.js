@@ -1,21 +1,45 @@
-// Set initial mode to dark
 document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.add('dark-mode');  // Start in dark mode
     toggleButton.textContent = 'Switch to Light Mode';  // Set button text to light mode
 
     // Typewriter effect for the header description
-    const description = "Computer Science Student | Web Developer";
+    const description = "Computer Science Student | Aspiring Programmer";
     let index = 0;
+
+    // Reset the header description before starting typewriter effect
+    const headerParagraph = document.querySelector('header p');
+    headerParagraph.textContent = '';  // Clear any previous text
+
+    // Create blinking cursor element
+    const cursor = document.createElement('span');
+    cursor.textContent = '|';
+    cursor.style.animation = 'blink 1s step-end infinite';  // Add blinking animation
+    headerParagraph.appendChild(cursor);
 
     function typeWriter() {
         if (index < description.length) {
-            document.querySelector('header p').textContent += description.charAt(index);
+            headerParagraph.textContent = description.substring(0, index + 1);  // Update text
+            headerParagraph.appendChild(cursor);  // Re-attach cursor
             index++;
-            setTimeout(typeWriter, 100);
+            setTimeout(typeWriter, 40);
         }
     }
     typeWriter();
 });
+
+// Blinking cursor animation (CSS)
+const style = document.createElement('style');
+style.textContent = `
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}`;
+document.head.appendChild(style);
+
 
 // Smooth scrolling to sections
 document.querySelectorAll('nav ul li a').forEach(anchor => {
@@ -33,8 +57,7 @@ document.querySelectorAll('nav ul li a').forEach(anchor => {
 // Project card hover effect
 document.querySelectorAll('.project-card').forEach(card => {
     card.addEventListener('mouseenter', () => {
-        card.style.transform = 'scale(1.05)';
-        // card.style.transition = 'transform 0s ease';
+        card.style.transform = 'scale(1.01)';
     });
 
     card.addEventListener('mouseleave', () => {
