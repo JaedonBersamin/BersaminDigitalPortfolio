@@ -1,4 +1,3 @@
-/* General Styles */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -10,7 +9,19 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* Dark Mode Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+#skills ul > li {
+    margin-top: 5px;
+}
+
+#skills ul ul > li {
+    margin-bottom: 50px;
+}
+
+
 body.dark-mode {
     background-color: #333;
     color: #f4f4f4;
@@ -21,7 +32,7 @@ body.dark-mode header {
 }
 
 body.dark-mode nav ul li a {
-    color: #ddd !important;  /* Make sure dark mode has white/light text */
+    color: #ddd !important;
 }
 
 
@@ -30,10 +41,10 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #7c694eb2; /* Background color for nav */
-    z-index: 1000; /* Ensure it stays on top of other elements */
+    background-color: #7c694eb2;
+    z-index: 1000; 
     padding: 10px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 nav ul {
@@ -49,7 +60,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #000000;  /* Default text color for light mode */
+    color: #000000; 
     text-decoration: none;
     font-weight: bold;
     padding: 10px;
@@ -62,9 +73,8 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
-/* Dark mode hover styles */
 body.dark-mode nav ul li a:hover {
-    background: #555;  /* Hover color for dark mode */
+    background: #555; 
     padding: 10px;
     border-radius: 5px;
 }
@@ -79,15 +89,15 @@ header {
     color: #232323;
     padding: 5px;
     text-align: center;
-    margin-top: 60px; /* Adjust this value based on the height of your nav */
+    margin-top: 60px;
 }
 
 .header-content {
     display: flex;
-    align-items: center; /* Vertically align items */
-    justify-content: center; /* Center the content */
-    padding: 2px 0; /* Optional: Add some vertical padding */
-    flex-direction: column; /* Stack image and text vertically */
+    align-items: center;
+    justify-content: center;
+    padding: 2px 0; 
+    flex-direction: column;
 }
 
 header h1 {
@@ -98,7 +108,7 @@ header h1 {
 
 header p {
     font-family: 'Nanum Gothic Coding', monospace;
-    font-weight: 400;  /* Regular weight */
+    font-weight: 400;
     font-size: 1.2rem;
     color: #000000
 }
@@ -112,37 +122,36 @@ body.dark-mode header p {
 }
 
 .profile-image {
-    width: 100px; /* Set a width for the image */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 40%; /* Optional: make it circular */
-    margin-right: 15px; /* Space between image and text */
-    margin-bottom: 1px; /* Add some space below the image */
+    width: 100px;
+    height: auto;
+    border-radius: 40%;
+    margin-right: 15px;
+    margin-bottom: 1px;
 }
 
 .text-content {
-    text-align: center; /* Center the text within this container */
+    text-align: center;
 }
 
 .typewriter-text {
-    display: inline-block; /* Keep it on one line */
-    margin-top: 5px; /* Adjust spacing between the name and typewriter text */
+    display: inline-block;
+    margin-top: 5px;
 }
 
 @media (max-width: 600px) {
     .header-content {
-        flex-direction: column; /* Stack items vertically on mobile */
-        align-items: center; /* Center items */
+        flex-direction: column;
+        align-items: center;
     }
 
     .profile-image {
-        margin-bottom: 10px; /* Space below the image */
+        margin-bottom: 10px;
     }
 }
 
-/* Dark Mode Header Styles */
 body.dark-mode header {
-    background-color: #2d2c2c;  /* New dark mode background color */
-    color: #fff;  /* Ensure text remains white or suitable contrast */
+    background-color: #2d2c2c;
+    color: #fff;
 }
 .header-content h1 {
     margin: 0;
@@ -151,7 +160,7 @@ body.dark-mode header {
 
 .header-content p {
     font-size: 1.2rem;
-    min-height: 30px; /* To accommodate the typewriter effect */
+    min-height: 30px;
 }
 
 /* Section Styles */
@@ -186,12 +195,12 @@ body.dark-mode h2 {
     border-radius: 5px;
     background: #f9f9f9;
     transition: transform 0.3s, background-color 0.3s, border-color 0.3s;
-    color: black; /* Default text color for light mode */
+    color: black;
 }
 
 .project-card h3,
 .project-card p {
-    color: inherit; /* Inherit color from .project-card */
+    color: inherit;
 }
 
 .project-card:hover {
@@ -203,16 +212,15 @@ body.dark-mode h2 {
 body.dark-mode .project-card {
     background-color: #555;
     border-color: #666;
-    color: white; /* Text color for dark mode */
+    color: white;
 }
 
 body.dark-mode .project-card h3,
 body.dark-mode .project-card p {
-    color: white; /* Ensure text is white in dark mode */
+    color: white;
 }
 
-
-/* Contact Form */
+/* Contact Me */
 #contact-form {
     display: flex;
     flex-direction: row;
@@ -220,35 +228,59 @@ body.dark-mode .project-card p {
     margin: 0 auto;
 }
 
-#contact-form input, #contact-form textarea {
-    margin: 10px 0;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-    width: 100%;
-    transition: border-color 0.3s;
+body.dark-mode .contact-item p a {
+    color: #ffffff;
 }
 
-#contact-form input:focus, #contact-form textarea:focus {
-    border-color: #333;
+body.dark-mode #contact h2 {
+    color: #ffffff;
 }
 
-body.dark-mode #contact-form input, body.dark-mode #contact-form textarea {
-    background-color: #444;
-    color: #ddd;
-    border-color: #666;
-}
-
-body.dark-mode #contact-form input:focus, body.dark-mode #contact-form textarea:focus {
-    border-color: #ddd;
+body.dark-mode .contact-item i {
+    color: #ffffff; 
 }
 
 .contact-info {
-    display: flex;          /* Make the container a flexbox */
-    justify-content: space-between;  /* Add space between the email and phone */
-    gap: 10px;              /* Adjust the gap between the elements */
-    flex-wrap: wrap;        /* Allow wrapping on smaller screens */
+    display: flex;
+    justify-content: space-around;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    flex-wrap: wrap;
+}
+
+body.dark-mode .contact-info {
+    background-color: #444;
+    color: #ffffff;
+    border-color: #666;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin: 0 10px;
+}
+
+.contact-item i {
+    color: #000000;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover i {
+    color: #0077b5;
+}
+
+.contact-item a {
+    color: #0e76a8;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+    font-size: 2rem;
+    transition: color 0.3s ease;
 }
 
 .contact-info p {
@@ -258,11 +290,35 @@ body.dark-mode #contact-form input:focus, body.dark-mode #contact-form textarea:
 
 @media (max-width: 600px) {
     .contact-info {
-        flex-direction: column;  /* Stack the info vertically on smaller screens */
-        gap: 10px;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .contact-item {
+        justify-content: center;
     }
 }
 
+#contact h2 {
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: #000000;
+    font-family: 'Nanum Gothic Coding', monospace;
+}
+
+.contact-info a {
+    font-size: 2rem;
+    margin: 0 10px;
+    transition: transform 0.3s;
+}
+
+.contact-item a:hover {
+    color: #0077b5;
+}
+
+.contact-item p a {
+    font-size: 1.1rem;
+}
 /* Footer */
 footer {
     text-align: center;
@@ -273,7 +329,8 @@ footer {
 }
 
 body.dark-mode footer {
-    background-color: #222;
+    background-color: #232323;
+    color: #ffffff;
 }
 
 /* Dark Mode Toggle Button */

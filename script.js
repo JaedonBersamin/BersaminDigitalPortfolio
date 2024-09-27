@@ -1,25 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
-    document.body.classList.add('dark-mode');  // Start in dark mode
-    toggleButton.textContent = 'Switch to Light Mode';  // Set button text to light mode
+    document.body.classList.add('dark-mode'); 
+    toggleButton.textContent = 'Switch to Light Mode';
 
     // Typewriter effect for the header description
     const description = "Computer Science Student | Aspiring Programmer";
     let index = 0;
 
-    // Reset the header description before starting typewriter effect
     const headerParagraph = document.querySelector('header p');
     headerParagraph.textContent = '';  // Clear any previous text
 
     // Create blinking cursor element
     const cursor = document.createElement('span');
     cursor.textContent = '|';
-    cursor.style.animation = 'blink 1s step-end infinite';  // Add blinking animation
+    cursor.style.animation = 'blink 1s step-end infinite';
     headerParagraph.appendChild(cursor);
 
     function typeWriter() {
         if (index < description.length) {
-            headerParagraph.textContent = description.substring(0, index + 1);  // Update text
-            headerParagraph.appendChild(cursor);  // Re-attach cursor
+            headerParagraph.textContent = description.substring(0, index + 1);
+            headerParagraph.appendChild(cursor);
             index++;
             setTimeout(typeWriter, 40);
         }
@@ -27,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     typeWriter();
 });
 
-// Blinking cursor animation (CSS)
+// Blinking cursor animation
 const style = document.createElement('style');
 style.textContent = `
 @keyframes blink {
@@ -41,7 +40,7 @@ style.textContent = `
 document.head.appendChild(style);
 
 
-// Smooth scrolling to sections
+// Smooth scrolling
 document.querySelectorAll('nav ul li a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -67,7 +66,7 @@ document.querySelectorAll('.project-card').forEach(card => {
 
 // Dark mode toggle button
 const toggleButton = document.createElement('button');
-toggleButton.textContent = 'Switch to Light Mode';  // Initial button text
+toggleButton.textContent = 'Switch to Light Mode';
 toggleButton.style.position = 'fixed';
 toggleButton.style.bottom = '20px';
 toggleButton.style.right = '20px';
@@ -81,6 +80,6 @@ document.body.appendChild(toggleButton);
 toggleButton.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
     toggleButton.textContent = document.body.classList.contains('dark-mode') ? 'Switch to Light Mode' : 'Switch to Dark Mode';
-});
+}); 
 
 
